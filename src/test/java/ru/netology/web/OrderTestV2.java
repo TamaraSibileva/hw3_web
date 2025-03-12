@@ -47,7 +47,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Ветров Матвей");
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+71468527942");
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='agreement'].input_invalid"));
         assertTrue(actual.isDisplayed());
         assertEquals("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй", actual.getText().trim());
     }
@@ -59,7 +59,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+72548965231");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='name'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Поле обязательно для заполнения", actual.getText().trim());
     }
@@ -71,7 +71,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+71468527942");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='name'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", actual.getText().trim());
     }
@@ -83,7 +83,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+87416523984");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='name'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", actual.getText().trim());
     }
@@ -95,7 +95,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+98741256325");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='name'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", actual.getText().trim());
     }
@@ -107,7 +107,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Поле обязательно для заполнения", actual.getText().trim());
     }
@@ -118,7 +118,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("79854125698");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actual.getText().trim());
     }
@@ -130,7 +130,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+8954213698");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actual.getText().trim());
     }
@@ -142,7 +142,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+845123697458");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actual.getText().trim());
     }
@@ -154,7 +154,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+785");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actual.getText().trim());
     }
@@ -166,7 +166,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+76521448523698559687");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actual.getText().trim());
     }
@@ -178,7 +178,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("ertyukjhg");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actual.getText().trim());
     }
@@ -190,7 +190,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("вапнгро");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actual.getText().trim());
     }
@@ -202,7 +202,7 @@ public class OrderTestV2 {
         formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("№*?*");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        WebElement actual = driver.findElement(By.cssSelector(".input_invalid .input__sub"));
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub"));
         assertTrue(actual.isDisplayed());
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actual.getText().trim());
     }
