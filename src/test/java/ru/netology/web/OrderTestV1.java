@@ -50,6 +50,18 @@ public class OrderTestV1 {
         driver.findElement(By.cssSelector("[role='button']")).click();
         WebElement actual = driver.findElement(By.cssSelector("[data-test-id='order-success']"));
         assertTrue(actual.isDisplayed());
-        assertEquals("Ваша успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actual.getText().trim());
+        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actual.getText().trim());
+    }
+
+    @Test
+    void shouldSendFormWithDashInName() {
+        WebElement formElement = driver.findElement(By.cssSelector("form"));
+        formElement.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Зайцева Анна-Мария");
+        formElement.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79854123658");
+        driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
+        driver.findElement(By.cssSelector("[role='button']")).click();
+        WebElement actual = driver.findElement(By.cssSelector("[data-test-id='order-success']"));
+        assertTrue(actual.isDisplayed());
+        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actual.getText().trim());
     }
 }
